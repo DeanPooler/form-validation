@@ -4,8 +4,56 @@ body {
     font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
     padding: 1em;
     margin: 0;
-  }
+}
 
   * {
     box-sizing: border-box;
-  }
+}
+
+@font-face {
+    font-family: "nord-bold";
+    src: url('../fonts/Norse-Bold.woff2') format('woff2'),
+         url('../fonts/Norse-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.image-wrapper {
+    width: 400px;
+    position: relative;
+}
+
+.background-image img {
+    width: 400px;
+    height: auto;
+}
+
+.logo-image {
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    position: absolute;
+    top: 100px;
+
+}
+
+.logo-image img {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    
+    top: 20px;
+    left: 20%;
+}
+
+.logo-text {
+    position: absolute;
+    
+    left: 42%;
+    top: 15px;
+
+    font-size: 5em;
+    font-family: "nord-bold";
+    color: whitesmoke;
+}
