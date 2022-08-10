@@ -55,6 +55,7 @@
                         <div>
                             <label for="password">PASSWORD</label>
                             <input type="password" id="password" name="password">
+                            <span class="error"></span>
                         </div>
                         <div>
                             <label for="password-confirm">CONFIRM PASSWORD</label>
@@ -73,5 +74,34 @@
             </form>
         </div>
     </section>
+
+    <script>
+        const form = document.querySelector('form');
+        const pwdInputs = document.querySelectorAll('input[type="password"]');
+        const error = document.querySelector('.error');
+
+        pwdInputs.forEach(input => {
+            input.addEventListener('input', (event) => {
+                event.preventDefault();
+                console.log(input.value);
+
+                const pwdTest = pwdInputs[0].value === pwdInputs[1].value && input.value !== ""
+                
+                if (!pwdTest) {
+                    pwdInputs.forEach(e => { 
+                        e.className = "invalid";
+                        error.textContent = "* passwords must match";
+                        error.className = "error active";
+                    });
+                } else {
+                    pwdInputs.forEach(e => {
+                        e.className = "valid";
+                        error.textContent = "";
+                        error.className = "error"
+                    });
+                }
+            })
+        })
+    </script>
 </body>
 </html>
